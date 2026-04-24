@@ -1,0 +1,43 @@
+{
+    "model": {
+        "pretrained_path": null,
+        "adapter_config": {
+            "hidden_dims": [256, 128, 64],
+            "output_channels": 3
+        }
+    },
+    "training": {
+        "data_path": "./data/processed",
+        "subjects": ["sub-08"],
+        "batch_size": 128,
+        "epochs": 200,
+        "optimizer": {
+            "learning_rate": 3e-4,
+            "weight_decay": 1e-3
+        },
+        "loss_weights": {
+            "alpha": 1,
+            "beta": 100
+        },
+        "device": "cuda:0",
+        "experiment": {
+            "seed": 42,
+            "save_dir": "./ckpt/eeg_project",
+            "save_interval": 10,
+            "checkpoint_format": "eeg_project_{subject}_{epochs}_last.pth",
+            "amp": true,
+            "log_dir": "./logs/eeg_project"
+        }
+    },
+    "inference": {
+        "data_path": "./data/processed",
+        "subjects": ["sub-08"],
+        "batch_size": 32,
+        "device": "cuda:0",
+        "output": {
+            "root_dir": "./outputs/images/LR",
+            "naming_convention": "{subject}_{label}_generated.png"
+        },
+        "model_checkpoint": "./ckpt/eeg_project/eeg_project_sub-08_150_last.pth"
+    }
+}

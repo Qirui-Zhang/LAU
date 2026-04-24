@@ -1,0 +1,36 @@
+{
+    "training": {
+        "data_path": "./data/processed",
+        "subjects": ["sub-08"],
+        "batch_size": 128,
+        "epochs": 200,
+        "optimizer": {
+            "learning_rate": 3e-4,
+            "weight_decay": 1e-3
+        },
+        "loss_weights": {
+            "alpha": 1,
+            "beta": 10
+        },
+        "device": "cuda:0",
+        "experiment": {
+            "seed": 42,
+            "save_dir": "./ckpt/atm_s",
+            "save_interval": 10,
+            "checkpoint_format": "atm_s_{subject}_{epochs}_last.pth",
+            "amp": true,
+            "log_dir": "./logs/atm_s"
+        }
+    },
+    "inference": {
+        "data_path": "./data/processed",
+        "subjects": ["sub-08"],
+        "batch_size": 128,
+        "device": "cuda:0",
+        "output": {
+            "root_dir": "./outputs/images/LR",
+            "naming_convention": "{subject}_{label}_generated.png"
+        },
+        "model_checkpoint": "./ckpt/atm_s/atm_s_sub-08_170_last.pth"
+    }
+}

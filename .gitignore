@@ -1,0 +1,7 @@
+ckpt/*.pth
+outputs/
+.DS_Store
+__pycache__/
+*.pyc
+.env
+wandb/
