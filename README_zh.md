@@ -72,7 +72,7 @@ python -m src.inference.eeg_encoders.inference_atm_s \
 
 重建图像保存到 `outputs/images/LR/`。
 
-> **提示：** 训练、推理中如果遇到相对路径的导入错误，可尝试修改config中的路径为绝对路径。
+> **提示：** 训练、推理中如果遇到相对路径的导入错误，可尝试修改配置文件中的路径为绝对路径。
 
 ## 结果
 

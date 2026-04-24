@@ -71,7 +71,7 @@ python -m src.inference.eeg_encoders.inference_atm_s \
 ```
 
 Reconstructed images are saved to `outputs/images/LR/`.
-> **Tip:** If you encounter import errors with relative paths when training and inferencing, try to use absolute paths for configs
+> **Tip:** If you encounter import errors with relative paths when training and inferencing, try to use absolute paths for configs.
 
 ## Results
 
