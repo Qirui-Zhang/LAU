@@ -39,20 +39,7 @@ data/processed/
     └── ...
 ```
 
-3. Prepare the image set. Place training and test images under `data/processed/image_set/`:
-
-```
-data/processed/image_set/
-├── training_images/
-│   ├── 00001_aardvark/
-│   │   ├── aardvark_01b.jpg
-│   │   └── ...
-│   └── ...
-└── test_images/
-    └── ...
-```
-
-Use `src/data/preprocess_images.py` to downsample images to 128x128:
+3. Prepare the image set. Use `src/data/preprocess_images.py` to downsample images to 128x128:
 
 ```bash
 python -m src.data.preprocess_images \
@@ -84,6 +71,7 @@ python -m src.inference.eeg_encoders.inference_atm_s \
 ```
 
 Reconstructed images are saved to `outputs/images/LR/`.
+> **Tip:** If you encounter import errors with relative paths when training and inferencing, try to use absolute paths for configs
 
 ## Results
 

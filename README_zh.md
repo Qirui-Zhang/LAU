@@ -39,20 +39,7 @@ data/processed/
     └── ...
 ```
 
-3. 准备图像集。将训练图像和测试图像放到 `data/processed/image_set/` 下：
-
-```
-data/processed/image_set/
-├── training_images/
-│   ├── 00001_aardvark/
-│   │   ├── aardvark_01b.jpg
-│   │   └── ...
-│   └── ...
-└── test_images/
-    └── ...
-```
-
-使用 `src/data/preprocess_images.py` 将图像降采样至 128x128：
+3. 准备图像集。使用 `src/data/preprocess_images.py` 将图像降采样至 128x128：
 
 ```bash
 python -m src.data.preprocess_images \
@@ -84,6 +71,8 @@ python -m src.inference.eeg_encoders.inference_atm_s \
 ```
 
 重建图像保存到 `outputs/images/LR/`。
+
+> **提示：** 训练、推理中如果遇到相对路径的导入错误，可尝试修改config中的路径为绝对路径。
 
 ## 结果
 
