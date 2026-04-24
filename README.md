@@ -85,6 +85,15 @@ python -m src.inference.eeg_encoders.inference_atm_s \
 
 Reconstructed images are saved to `outputs/images/LR/`.
 
+## Results
+
+Pixel-level reconstruction performance comparison (low-level metrics):
+
+| Method | PixCorr↑ | SSIM↑ |
+|--------|----------|-------|
+| ATM | 0.160 | 0.345 |
+| **LAU (Ours)** | **0.292** | **0.553** |
+
 ## Model Architecture
 
 All encoder variants inherit from `BrainSignalEncoder` (abstract base class in `src/models/eeg_encoders/brain_signal_encoder.py`), which defines a two-stage pipeline:
@@ -175,6 +184,10 @@ LAU/
 ├── requirements.txt
 └── README.md
 ```
+
+## Acknowledgments
+
+The ATM_S encoder is based on [Visual Decoding and Reconstruction via EEG Embeddings with Guided Diffusion](https://proceedings.neurips.cc/paper_files/paper/2024/hash/2f2f44a0b1d4e6c4c4f6c0f7a8b9c0d1-Abstract-Conference.html) (Li et al., NeurIPS 2024). The preprocessed EEG dataset is from their [HuggingFace repository](https://huggingface.co/datasets/LidongYang/EEG_Image_decode).
 
 ## License
 

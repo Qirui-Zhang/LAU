@@ -3,7 +3,7 @@
         "data_path": "./data/processed",
         "subjects": ["sub-08"],
         "batch_size": 128,
-        "epochs": 200,
+        "epochs": 170,
         "optimizer": {
             "learning_rate": 3e-4,
             "weight_decay": 1e-3

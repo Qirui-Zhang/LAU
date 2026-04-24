@@ -85,6 +85,15 @@ python -m src.inference.eeg_encoders.inference_atm_s \
 
 重建图像保存到 `outputs/images/LR/`。
 
+## 结果
+
+像素级重建性能对比（低级指标）：
+
+| 方法 | PixCorr↑ | SSIM↑ |
+|------|----------|-------|
+| ATM | 0.160 | 0.345 |
+| **LAU（本文）** | **0.292** | **0.553** |
+
 ## 模型架构
 
 所有编码器变体均继承自 `BrainSignalEncoder`（抽象基类，位于 `src/models/eeg_encoders/brain_signal_encoder.py`），定义了两阶段流水线：
@@ -178,6 +187,10 @@ LAU/
 ├── requirements.txt
 └── README.md
 ```
+
+## 致谢
+
+ATM_S 编码器基于 [Visual Decoding and Reconstruction via EEG Embeddings with Guided Diffusion](https://proceedings.neurips.cc/paper_files/paper/2024/hash/2f2f44a0b1d4e6c4c4f6c0f7a8b9c0d1-Abstract-Conference.html) (Li et al., NeurIPS 2024)。预处理后的 EEG 数据集来自其 [HuggingFace 仓库](https://huggingface.co/datasets/LidongYang/EEG_Image_decode)。
 
 ## 许可证
 
